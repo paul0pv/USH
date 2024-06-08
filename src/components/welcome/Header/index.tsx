@@ -1,4 +1,4 @@
-import { Box, Flex, Heading, Button, Stack, Hide } from "@chakra-ui/react";
+import { Box, Flex, Heading, Button, Stack } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 
 export default function Header() {

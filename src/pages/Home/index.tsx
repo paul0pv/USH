@@ -7,7 +7,7 @@ import { selectorEmployee, selectorUser } from "../../selectors/selector";
  */
 
 export default function Home() {
-  let route = "/login";
+  //let route = "/login";
 
   /**
   const user = useSelector(selectorUser);
