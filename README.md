@@ -1,30 +1,17 @@
-# React + TypeScript + Vite
+# Transforma tu Aprendizaje con U-SHH
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+U-SHH es una innovadora aplicación móvil que redefine la manera en que aprendemos y compartimos conocimientos. Fusionando la interactividad de una red social con contenido académico de alta calidad, U-SHH crea una experiencia de aprendizaje única y accesible para todos.
 
-Currently, two official plugins are available:
+## Nuestra Misión
+Hacer que la educación sea accesible, interactiva y atractiva, empoderando a estudiantes, educadores y profesionales a alcanzar su máximo potencial a través de una plataforma que promueve el intercambio de conocimientos y la colaboración.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### ¿Qué Ofrecemos?
+- **Interactividad:** Participa en discusiones, comparte tus propias ideas y aprende de otros en una comunidad vibrante.
+- **Diversidad de Contenido:** Encuentra contenido educativo en múltiples formatos y disciplinas, desde ciencias hasta humanidades.
+- **Innovación:** Aprovecha las últimas tecnologías para acceder a contenido educativo de forma dinámica y efectiva.
+- **Conexión:** Únete a una red global de individuos apasionados por el aprendizaje, estableciendo conexiones significativas y colaborativas.
 
-## Expanding the ESLint configuration
+## Únete a Nosotros
+Descarga U-SHH hoy mismo y forma parte de una comunidad que está transformando el aprendizaje. ¡Transfiere tu manera de aprender y enseñar con U-SHH!
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+[Descargar U-SHH](#) <!-- Aquí iría el enlace a la descarga de la aplicación -->
