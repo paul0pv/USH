@@ -30,7 +30,7 @@ export default function Home() {
           minH="100vh"
           position="relative"
           zIndex="1"
-          backgroundImage="url('/src/assets/home-background.jpg')"
+          backgroundImage="url('/home-background.jpg')"
           bgSize="cover"
           backgroundPosition="center"
           backgroundRepeat="no-repeat"

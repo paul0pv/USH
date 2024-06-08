@@ -14,7 +14,7 @@ export default function LogInPage() {
   };
 
   return (
-    <Box backgroundImage="url('/src/assets/sign-background.jpg')" bgSize="cover" backgroundPosition="center" backgroundRepeat="no-repeat" minH="100vh" display="flex" alignItems="center" justifyContent="center">
+    <Box backgroundImage="url('/sign-background.jpg')" bgSize="cover" backgroundPosition="center" backgroundRepeat="no-repeat" minH="100vh" display="flex" alignItems="center" justifyContent="center">
       <Box position="fixed" top="0" left="0" width="100%" zIndex="10">
           <Header />
         </Box>

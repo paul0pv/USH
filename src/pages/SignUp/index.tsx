@@ -25,7 +25,7 @@ export default function SignUpPage() {
   };
 
   return (
-    <Box  backgroundImage="url('/src/assets/log-background.jpg')" bgSize="cover" backgroundPosition="center" backgroundRepeat="no-repeat" minH="100vh" display="flex" alignItems="center" justifyContent="center">
+    <Box  backgroundImage="url('/log-background.jpg')" bgSize="cover" backgroundPosition="center" backgroundRepeat="no-repeat" minH="100vh" display="flex" alignItems="center" justifyContent="center">
       <Box position="fixed" top="0" left="0" width="100%" zIndex="10">
           <Header />
         </Box>
