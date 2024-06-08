@@ -1,5 +1,6 @@
 import { Box, Button, Heading, Input, FormControl, FormLabel, VStack } from '@chakra-ui/react';
 import { useState, ChangeEvent, FormEvent } from 'react';
+import { Header } from '../../components';
 
 export default function SignUpPage() {
   const [formValues, setFormValues] = useState({
@@ -24,7 +25,10 @@ export default function SignUpPage() {
   };
 
   return (
-    <Box bg="background.500" minH="100vh" display="flex" alignItems="center" justifyContent="center">
+    <Box  backgroundImage="url('/src/assets/log-background.jpg')" bgSize="cover" backgroundPosition="center" backgroundRepeat="no-repeat" minH="100vh" display="flex" alignItems="center" justifyContent="center">
+      <Box position="fixed" top="0" left="0" width="100%" zIndex="10">
+          <Header />
+        </Box>
       <Box
         bg="white"
         p="8"
@@ -34,11 +38,14 @@ export default function SignUpPage() {
         boxShadow="lg"
         maxW="md"
         width="full"
+        mt={{ base: '16', md: '20' }} 
+        maxH="90vh" // Ensure the form does not exceed 80% of the viewport height
+        overflowY="auto" 
         style={{ backdropFilter: 'blur(10px)' }}
       >
-        <Heading as="h2" size="xl" textAlign="center" mb="8" color="text.500">
-          Registrarme
-        </Heading>
+        {/*<Heading as="h2" size="xl" textAlign="center" mb="8" color="text.500">
+         Únete a nuestra comunidad
+  </Heading>*/}
         <Box as="form" onSubmit={handleSubmit}>
           <VStack spacing="4">
             <FormControl id="fullName">
@@ -119,7 +126,7 @@ export default function SignUpPage() {
               />
             </FormControl>
             <Button type="submit" colorScheme="primary" variant="solid" size="lg" width="full">
-              Sign Up
+              Registrarme
             </Button>
           </VStack>
         </Box>
