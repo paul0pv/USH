@@ -1,4 +1,4 @@
-import { Box, Button, Heading, Input, FormControl, FormLabel, VStack } from '@chakra-ui/react';
+import { Box, Button, Input, FormControl, FormLabel, VStack } from '@chakra-ui/react';
 import { useState, ChangeEvent, FormEvent } from 'react';
 import { Header } from '../../components';
 
