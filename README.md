@@ -14,4 +14,4 @@ Hacer que la educación sea accesible, interactiva y atractiva, empoderando a es
 ## Únete a Nosotros
 Descarga U-SHH hoy mismo y forma parte de una comunidad que está transformando el aprendizaje. ¡Transfiere tu manera de aprender y enseñar con U-SHH!
 
-[Conoce U-SHH]([https://ush-ten.vercel.app/])
+[Conoce U-SHH](https://ush-ten.vercel.app/)
