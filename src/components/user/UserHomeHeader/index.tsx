@@ -3,7 +3,6 @@ import {
     Box,
     Heading,
     IconButton,
-    useMediaQuery,
     Spacer,
   } from '@chakra-ui/react';
   import { SearchIcon, AtSignIcon, StarIcon } from '@chakra-ui/icons';
