@@ -1,23 +1,27 @@
 import { Box, Button, Heading, Input, FormControl, FormLabel, VStack } from '@chakra-ui/react';
 import { useState, ChangeEvent, FormEvent } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import { Header } from '../../components';
 
 export default function LogInPage() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const navigate = useNavigate();
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     // Handle form submission logic here
     console.log('Username:', username);
     console.log('Password:', password);
+    // Redirect to the dashboard page
+    navigate('/dashboard');
   };
 
   return (
     <Box backgroundImage="url('/sign-background.jpg')" bgSize="cover" backgroundPosition="center" backgroundRepeat="no-repeat" minH="100vh" display="flex" alignItems="center" justifyContent="center">
       <Box position="fixed" top="0" left="0" width="100%" zIndex="10">
-          <Header />
-        </Box>
+        <Header />
+      </Box>
       <Box
         bg="white"
         p="8"
@@ -58,6 +62,9 @@ export default function LogInPage() {
             <Button type="submit" colorScheme="primary" variant="solid" size="lg" width="full">
               Ingresar
             </Button>
+            <Box>
+              ¿No tienes una cuenta? <Link to="/signup">Regístrate</Link>
+            </Box>
           </VStack>
         </Box>
       </Box>

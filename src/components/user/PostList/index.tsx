@@ -3,7 +3,6 @@ import {
     Flex,
     Avatar,
     Text,
-    Heading,
     IconButton,
     Stack,
     Tag,

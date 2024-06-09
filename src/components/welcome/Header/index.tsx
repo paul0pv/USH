@@ -8,9 +8,7 @@ import {
   useMediaQuery,
   Accordion,
   AccordionItem,
-  AccordionButton,
   AccordionPanel,
-  AccordionIcon
 } from '@chakra-ui/react';
 import { HamburgerIcon } from '@chakra-ui/icons';
 import { Link, useLocation, useNavigate } from 'react-router-dom';

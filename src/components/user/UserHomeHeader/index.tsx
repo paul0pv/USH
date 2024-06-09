@@ -2,7 +2,6 @@ import {
     Flex,
     Box,
     Heading,
-    Button,
     IconButton,
     useMediaQuery,
     Spacer,
@@ -12,7 +11,6 @@ import {
   
   export default function UserHomeHeader() {
     const navigate = useNavigate();
-    const [isMobile] = useMediaQuery('(max-width: 768px)');
   
     const handleProfile = () => {
       navigate('/profile');
