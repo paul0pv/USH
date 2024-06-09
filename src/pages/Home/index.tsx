@@ -50,7 +50,7 @@ export default function Home() {
     <Flex direction={{ base: "column", md: "row" }} align="center">
       <Box boxSize={{ base: "3rem", md: "4rem" }} mb={{ base: 4, md: 0 }} mr={{ md: 6 }}>
         <Image
-          src="/src/assets/Ush-logo.jpeg" // Replace this with your logo image path
+          src="/Ush-logo.jpeg" // Replace this with your logo image path
           alt="Logo"
           objectFit="contain"
           height="100%" // Make sure the image scales with the Box size

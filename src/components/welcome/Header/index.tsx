@@ -1,16 +1,38 @@
-import { Flex, Box, Heading, Button, Stack, Menu, MenuButton, MenuList, MenuItem, IconButton, useMediaQuery } from '@chakra-ui/react';
+import {
+  Flex,
+  Box,
+  Heading,
+  Button,
+  Stack,
+  IconButton,
+  useMediaQuery,
+  Accordion,
+  AccordionItem,
+  AccordionButton,
+  AccordionPanel,
+  AccordionIcon
+} from '@chakra-ui/react';
 import { HamburgerIcon } from '@chakra-ui/icons';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { useRef } from 'react';
 
 export default function Header() {
-
   const navigate = useNavigate();
   const location = useLocation();
   const [isMobile] = useMediaQuery('(max-width: 768px)');
+  const accordionRef = useRef<HTMLDivElement>(null);
 
   const handleBackToHome = () => {
     navigate('/');
   };
+
+  const toggleAccordion = () => {
+    const accordion = accordionRef.current;
+    if (accordion) {
+      accordion.style.display = accordion.style.display === 'block' ? 'none' : 'block';
+    }
+  };
+
   return (
     <Flex
       as="header"
@@ -52,19 +74,35 @@ export default function Header() {
 
       {/* Mobile menu button */}
       {isMobile && (
-        <Menu>
-          <MenuButton as={IconButton} icon={<HamburgerIcon />} variant="outline" colorScheme="whiteAlpha" />
-          <MenuList>
-            {location.pathname === '/' ? (
-              <>
-                <MenuItem onClick={() => navigate('/signin')}>Iniciar sesión</MenuItem>
-                <MenuItem onClick={() => navigate('/signup')}>Registrarse</MenuItem>
-              </>
-            ) : (
-              <MenuItem onClick={handleBackToHome}>Volver</MenuItem>
-            )}
-          </MenuList>
-        </Menu>
+        <>
+          <IconButton
+            icon={<HamburgerIcon />}
+            variant="outline"
+            colorScheme="whiteAlpha"
+            aria-label="Open menu"
+            onClick={toggleAccordion}
+          />
+          <Accordion allowToggle ref={accordionRef} display="none" position="absolute" top="60px" width="100%">
+            <AccordionItem border="none">
+              <AccordionPanel pb={4}>
+                {location.pathname === '/' ? (
+                  <>
+                    <Box onClick={() => navigate('/signin')} cursor="pointer" py={2}>
+                      Iniciar sesión
+                    </Box>
+                    <Box onClick={() => navigate('/signup')} cursor="pointer" py={2}>
+                      Registrarse
+                    </Box>
+                  </>
+                ) : (
+                  <Box onClick={handleBackToHome} cursor="pointer" py={2}>
+                    Volver
+                  </Box>
+                )}
+              </AccordionPanel>
+            </AccordionItem>
+          </Accordion>
+        </>
       )}
     </Flex>
   );
