@@ -7,7 +7,6 @@ import {
   Editable,
   EditableInput,
   EditablePreview,
-  useMediaQuery,
 } from "@chakra-ui/react";
 import { SearchIcon, AtSignIcon, StarIcon } from "@chakra-ui/icons";
 import { Link, useNavigate } from "react-router-dom";
