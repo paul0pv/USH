@@ -6,29 +6,22 @@ import {
   Stack,
   IconButton,
   useMediaQuery,
-  Accordion,
-  AccordionItem,
-  AccordionPanel,
-} from '@chakra-ui/react';
-import { HamburgerIcon } from '@chakra-ui/icons';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { useRef } from 'react';
+  Menu,
+  MenuButton,
+  MenuList,
+  MenuItem,
+} from "@chakra-ui/react";
+import { HamburgerIcon } from "@chakra-ui/icons";
+import { RiArrowGoBackFill } from "react-icons/ri";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 export default function Header() {
   const navigate = useNavigate();
   const location = useLocation();
-  const [isMobile] = useMediaQuery('(max-width: 768px)');
-  const accordionRef = useRef<HTMLDivElement>(null);
+  const [isMobile] = useMediaQuery("(max-width: 768px)");
 
   const handleBackToHome = () => {
-    navigate('/');
-  };
-
-  const toggleAccordion = () => {
-    const accordion = accordionRef.current;
-    if (accordion) {
-      accordion.style.display = accordion.style.display === 'block' ? 'none' : 'block';
-    }
+    navigate("/");
   };
 
   return (
@@ -36,10 +29,9 @@ export default function Header() {
       as="header"
       align="center"
       justify="space-between"
-      px={{ base: '4', md: '8' }}
+      px={{ base: "4", md: "8" }}
       py="3"
       bg="#333333"
-      borderRadius="sm"
       boxShadow="2xl"
     >
       <Box>
@@ -49,23 +41,27 @@ export default function Header() {
       </Box>
 
       {/* Desktop navigation buttons */}
-      {!isMobile && location.pathname === '/' && (
+      {!isMobile && location.pathname === "/" && (
         <Stack direction="row" spacing="4">
-          <Link to="/signin">
-            <Button colorScheme="whiteAlpha" variant="outline">
-              Iniciar sesión
-            </Button>
-          </Link>
           <Link to="/signup">
             <Button colorScheme="whiteAlpha" variant="outline">
               Registrarse
             </Button>
           </Link>
+          <Link to="/signin">
+            <Button colorScheme="whiteAlpha" variant="outline">
+              Iniciar sesión
+            </Button>
+          </Link>
         </Stack>
       )}
 
-      {!isMobile && location.pathname !== '/' && (
-        <Button colorScheme="whiteAlpha" variant="outline" onClick={handleBackToHome}>
+      {!isMobile && location.pathname !== "/" && (
+        <Button
+          colorScheme="whiteAlpha"
+          variant="outline"
+          onClick={handleBackToHome}
+        >
           Volver
         </Button>
       )}
@@ -73,33 +69,26 @@ export default function Header() {
       {/* Mobile menu button */}
       {isMobile && (
         <>
-          <IconButton
-            icon={<HamburgerIcon />}
-            variant="outline"
-            colorScheme="whiteAlpha"
-            aria-label="Open menu"
-            onClick={toggleAccordion}
-          />
-          <Accordion allowToggle ref={accordionRef} display="none" position="absolute" top="60px" width="100%">
-            <AccordionItem border="none">
-              <AccordionPanel pb={4}>
-                {location.pathname === '/' ? (
-                  <>
-                    <Box onClick={() => navigate('/signin')} cursor="pointer" py={2}>
-                      Iniciar sesión
-                    </Box>
-                    <Box onClick={() => navigate('/signup')} cursor="pointer" py={2}>
-                      Registrarse
-                    </Box>
-                  </>
-                ) : (
-                  <Box onClick={handleBackToHome} cursor="pointer" py={2}>
-                    Volver
-                  </Box>
-                )}
-              </AccordionPanel>
-            </AccordionItem>
-          </Accordion>
+          {location.pathname === "/" ? (
+            <Menu>
+              <MenuButton as={IconButton}
+              aria-label="Options"
+              icon={<HamburgerIcon/>}
+              variant="outline"
+              colorScheme="whiteAlpha"
+              />
+              <MenuList>
+                <MenuItem>
+                  <Link to="signup">Registrase</Link>
+                </MenuItem>
+                <MenuItem>
+                  <Link to="signin">Iniciar Sesión</Link>
+                </MenuItem>
+              </MenuList>
+            </Menu>
+          ) : (
+            <IconButton icon={<RiArrowGoBackFill/>} onClick={handleBackToHome} cursor="pointer" aria-label="Go Back" colorScheme="whiteAlpha" variant="outline"/>
+          )}
         </>
       )}
     </Flex>
