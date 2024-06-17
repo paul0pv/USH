@@ -6,15 +6,13 @@ import {
   Spacer,
   Editable,
   EditableInput,
-  EditableTextarea,
   EditablePreview,
   useMediaQuery,
 } from "@chakra-ui/react";
-import { SearchIcon, AtSignIcon, StarIcon, CloseIcon } from "@chakra-ui/icons";
+import { SearchIcon, AtSignIcon, StarIcon } from "@chakra-ui/icons";
 import { Link, useNavigate } from "react-router-dom";
 
 export default function UserHomeHeader() {
-  const [isMobile] = useMediaQuery("(max-width: 768px)");
   const navigate = useNavigate();
 
   const handleProfile = () => {
